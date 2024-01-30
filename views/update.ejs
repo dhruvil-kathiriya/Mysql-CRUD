@@ -1,0 +1,19 @@
+<form action="/editrecord" method="post">
+    <table border="1">
+        <input type="text" name="editId" value="<%= upData.id %>">
+        <tr>
+            <td>Enter Name</td>
+            <td><input type="text" name="name" value="<%= upData.name%>"></td>
+        </tr>
+        
+        <tr>
+            <td>Enter Email</td>
+            <td><input type="text" name="email" value="<%= upData.email%>"></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,52 @@
+<form action="/insertData" method="post">
+    <table border="1">
+        <tr>
+            <input type="hidden" value="<%= Math.round(Math.random()*100000) %>" name="id">
+        </tr>
+        <tr>
+            <td>Enter Name : </td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Enter Email : </td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td>Enter Password : </td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="submit"></td>
+        </tr>
+    </table>
+</form>
+
+
+<table border="1">
+    <tr>
+        <input type="text" name="search" placeholder="search"><a href="/search">search</a><br><br>
+
+        <th>ID </th>
+        <th>Name </th>
+        <th>Email </th>
+        <th colspan="2">Actions</th>
+    </tr>
+    <% for(var sd of stdData){ %>
+        <tr>
+            <td>
+                <%= sd.id %>
+            </td>
+            <td>
+                <%= sd.name%>
+            </td>
+            <td>
+                <%= sd.email%>
+            </td>
+            <td><a href="/deleteRecord/<%= sd.id %>">Delete</a></td>
+            <td><a href="/updateRecord/<%= sd.id %>">Update</a></td>
+
+        </tr>
+        <% } %>
+
+</table>
